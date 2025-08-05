@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BudgetBuddy – Personal Finance Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts for Minimalist Look -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <header class="navbar">
+    <div class="nav-left">
+      <img src="assets/logo.svg" alt="BudgetBuddy Logo" class="logo">
+      <span class="app-title">BudgetBuddy</span>
+    </div>
+    <div class="nav-actions">
+      <button class="toggle-mode" aria-label="Toggle Dark/Light Mode">🌙</button>
+      <button class="burger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Dashboard Section -->
+  <main>
+    <section class="dashboard">
+      <div class="summary-card balance">
+        <div class="card-title">Current Balance</div>
+        <div class="card-value" id="current-balance">₹5,000</div>
+      </div>
+      <div class="summary-card income">
+        <div class="card-title">Total Income</div>
+        <div class="card-value" id="total-income">₹10,000</div>
+      </div>
+      <div class="summary-card expense">
+        <div class="card-title">Total Expenses</div>
+        <div class="card-value" id="total-expense">₹5,000</div>
+      </div>
+    </section>
+
+    <section class="actions">
+      <!-- Add Transaction Form -->
+      <form class="add-transaction" id="add-transaction-form" autocomplete="off">
+        <div class="form-group">
+          <i class="fas fa-tag input-icon"></i>
+          <input type="text" placeholder="Title (e.g., Groceries)" name="title" required>
+        </div>
+        <div class="form-group">
+          <i class="fas fa-rupee-sign input-icon"></i>
+          <input type="number" placeholder="Amount" name="amount" required>
+        </div>
+        <div class="form-group">
+          <i class="fas fa-folder input-icon"></i>
+          <select name="category" required>
+            <option value="">Select Category</option>
+            <option>Food</option>
+            <option>Travel</option>
+            <option>Salary</option>
+            <option>Rent</option>
+            <option>Misc</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <i class="fas fa-calendar input-icon"></i>
+          <input type="date" name="date" required>
+        </div>
+        <div class="type-toggle">
+          <label><input type="radio" name="type" value="income" checked><i class="fas fa-plus-circle"></i> Income</label>
+          <label><input type="radio" name="type" value="expense"><i class="fas fa-minus-circle"></i> Expense</label>
+        </div>
+        <button type="submit" class="add-btn">
+          <i class="fas fa-plus"></i> Add Transaction
+        </button>
+      </form>
+    </section>
+
+    <section class="transactions-section">
+      <div class="filter-bar">
+        <div class="form-group">
+          <i class="fas fa-filter input-icon"></i>
+          <select id="filter-type">
+            <option value="all">All Transactions</option>
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <i class="fas fa-search input-icon"></i>
+          <input type="search" placeholder="Search transactions..." id="transaction-search">
+        </div>
+      </div>
+      <ul class="transactions-list" id="transactions-list">
+        <!-- Transactions will be inserted here by JS -->
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-text">
+      Made with ❤️  |
+      <a href="https://github.com/yourusername/budgetbuddy" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
